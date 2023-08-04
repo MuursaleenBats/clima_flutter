@@ -13,7 +13,8 @@ class Location {
       latitude = position.latitude;
       longitude = position.longitude;
     } else {
-      print("Location permission not granted");
+      latitude = 0;
+      longitude = 0;
     }
   }
 }
