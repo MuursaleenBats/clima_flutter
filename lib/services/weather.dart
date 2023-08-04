@@ -5,6 +5,13 @@ import 'package:clima_flutter/utilities/constants.dart';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 class WeatherModel {
+  Future getCityWeather(String cityName) async {
+    NetworkHelper netHelp =
+        NetworkHelper('$baseUrl?q=$cityName&appid=$kApiKey&units=metric');
+    var weatherData = await netHelp.getData();
+    return weatherData;
+  }
+
   Future getLocationWeather() async {
     Location location = Location();
     await location.getCurrentLocation();
